@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flood Upload Page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('flood_background.jpg'); /* Replace 'flood_background.jpg' with the actual image file path */
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 100px auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        label {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #result {
+            margin-top: 20px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Upload Image or Video</h2>
+    
+    <input type="file" id="fileInput" accept="image/*, video/*">
+    <label for="fileInput">Choose File</label>
+
+    <div id="result"></div>
+</div>
+
+<script>
+    const fileInput = document.getElementById('fileInput');
+    const resultContainer = document.getElementById('result');
+
+    fileInput.addEventListener('change', () => {
+        resultContainer.innerHTML = '';
+
+        if (fileInput.files.length > 0) {
+            const file = fileInput.files[0];
+            const fileType = file.type;
+
+            if (fileType.startsWith('image/')) {
+                displayImage(file);
+            } else if (fileType.startsWith('video/')) {
+                displayVideo(file);
+            } else {
+                resultContainer.innerHTML = '<p>Invalid file type. Please upload an image or video.</p>';
+            }
+        }
+    });
+
+    function displayImage(file) {
+        const img = document.createElement('img');
+        img.src = URL.createObjectURL(file);
+        resultContainer.appendChild(img);
+    }
+
+    function displayVideo(file) {
+        const video = document.createElement('video');
+        video.src = URL.createObjectURL(file);
+        video.controls = true;
+        resultContainer.appendChild(video);
+    }
+</script>
+
+</body>
+</html>

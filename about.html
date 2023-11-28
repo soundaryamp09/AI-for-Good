@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Our Team and Join Us</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .team-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .team-member {
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 300px;
+            margin: 20px;
+            text-align: center;
+        }
+
+        .team-member img {
+            border-radius: 50%;
+            max-width: 100px;
+            height: auto;
+        }
+
+        .team-member h2 {
+            margin-top: 10px;
+            font-size: 18px;
+        }
+
+        .team-member p {
+            color: #666;
+        }
+
+        .join-form {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            display: none;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            text-decoration: none;
+            color: #fff;
+            background-color: #0077b5; /* Button color */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #005580; /* Button color on hover */
+        }
+		body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 12px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+	<h1>Our Team</h1>
+
+    <div class="team-container">
+        <!-- Team Member 1 -->
+        <div class="team-member">
+            <img src="sound.jpeg" alt="Team Member 1">
+            <h2>Soundarya M P</h2>
+            <p>Position:Team & Tech lead </p>
+            <p>Email:soundaryamp09@gmail.com</p>
+        </div>
+
+        <!-- Team Member 2 -->
+        <div class="team-member">
+            <img src="chandu.jpeg" alt="Team Member 2">
+            <h2>Chandana D S</h2>
+            <p>Position:collaborative head</p>
+            <p>Email:chandanads239@gmail.com</p>
+        </div>
+
+        <!-- Team Member 3 -->
+        <div class="team-member">
+            <img src="samya.jpeg" alt="Team Member 3">
+            <h2>Samya Taj</h2>
+            <p>Position:creative head</p>
+            <p>Email:tajsamya0@gmail.com</p>
+        </div>
+
+
+	</div>
+	<div>
+    <h2>Join Us</h2>
+
+    <button onclick="showForm('volunteer')">Join as Volunteer</button>
+    <button onclick="showForm('partner')">Join as Partner</button>
+
+    <!-- Volunteer Form -->
+    <form id="volunteerForm" class="join-form" action="/submit_volunteer_form" method="post">
+        <div class="form-group">
+            <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required>
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required>
+
+        <label for="occupation">Occupation:</label>
+        <input type="text" id="occupation" name="occupation" required>
+
+        <label for="edu_qualification">Educational Qualification:</label>
+        <input type="text" id="edu_qualification" name="edu_qualification" required>
+
+        <label for="experience">Years of Work Experience:</label>
+        <input type="number" id="experience" name="experience" required>
+
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" required>
+
+        <label for="state">State:</label>
+        <input type="text" id="state" name="state" required>
+
+        <label>Have you ever done any voluntary work before?</label>
+        <input type="radio" id="volunteer_yes" name="volunteer_experience" value="Yes" required>
+        <label for="volunteer_yes">Yes</label>
+        <input type="radio" id="volunteer_no" name="volunteer_experience" value="No" required>
+        <label for="volunteer_no">No</label>
+
+        <label for="volunteer_details">If yes, please brief the details:</label>
+        <textarea id="volunteer_details" name="volunteer_details"></textarea>
+
+        <label for="interests">What type of volunteer work interests you?</label>
+        <input type="checkbox" id="interests_env" name="interests[]" value="Environmental Conservation">
+        <label for="interests_env">Environmental Conservation</label>
+        <!-- Add more interests as needed -->
+
+        <label for="work_preference">How do you want to do your volunteer work?</label>
+        <select id="work_preference" name="work_preference" required>
+            <option value="In-Person">In-Person</option>
+            <option value="Remote">Remote/Online</option>
+            <option value="Flexible">Flexible (Both In-Person and Remote)</option>
+        </select>
+
+        <label for="additional_comments">Additional Comments or Preferences:</label>
+        <textarea id="additional_comments" name="additional_comments"></textarea>
+            <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required>
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required>
+
+        <label for="occupation">Occupation:</label>
+        <input type="text" id="occupation" name="occupation" required>
+
+        <label for="edu_qualification">Educational Qualification:</label>
+        <input type="text" id="edu_qualification" name="edu_qualification" required>
+
+        <label for="experience">Years of Work Experience:</label>
+        <input type="number" id="experience" name="experience" required>
+
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" required>
+
+        <label for="state">State:</label>
+        <input type="text" id="state" name="state" required>
+
+        <label>Have you ever done any voluntary work before?</label>
+        <input type="radio" id="volunteer_yes" name="volunteer_experience" value="Yes" required>
+        <label for="volunteer_yes">Yes</label>
+        <input type="radio" id="volunteer_no" name="volunteer_experience" value="No" required>
+        <label for="volunteer_no">No</label>
+
+        <label for="volunteer_details">If yes, please brief the details:</label>
+        <textarea id="volunteer_details" name="volunteer_details"></textarea>
+
+        <label for="interests">What type of volunteer work interests you?</label>
+        <input type="checkbox" id="interests_env" name="interests[]" value="Environmental Conservation">
+        <label for="interests_env">Environmental Conservation</label>
+        <!-- Add more interests as needed -->
+
+        <label for="work_preference">How do you want to do your volunteer work?</label>
+        <select id="work_preference" name="work_preference" required>
+            <option value="In-Person">In-Person</option>
+            <option value="Remote">Remote/Online</option>
+            <option value="Flexible">Flexible (Both In-Person and Remote)</option>
+        </select>
+
+        <label for="additional_comments">Additional Comments or Preferences:</label>
+        <textarea id="additional_comments" name="additional_comments"></textarea>
+        </div>
+
+        <!-- Add more volunteer form fields as needed -->
+
+        <button type="submit">Submit Volunteer Form</button>
+    </form>
+
+    <!-- Partner Form -->
+    <form id="partnerForm" class="join-form" action="/submit_partner_form" method="post">
+        <div class="form-group">
+			<p>email us</p>
+        </div>
+    </form>
+</div>
+    <script>
+        function showForm(formType) {
+            // Hide both forms initially
+            document.getElementById('volunteerForm').style.display = 'none';
+            document.getElementById('partnerForm').style.display = 'none';
+
+            // Show the selected form
+            document.getElementById(formType + 'Form').style.display = 'block';
+        }
+    </script>
+
+    <!-- Add additional content or links as needed -->
+
+</body>
+
+</html>
